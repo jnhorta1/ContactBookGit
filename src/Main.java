@@ -45,6 +45,7 @@ public class Main {
                     break;
                 case GET_NAME:
                     getName(in, cBook);
+                    break;
                 case GET_EMAIL:
                     getEmail(in,cBook);
                     break;
