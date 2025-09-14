@@ -15,8 +15,9 @@ public class Main {
     public static final String LIST_CONTACTS  = "LC";
     public static final String QUIT           = "Q";
 
-    //Constantes que definem as mensagens para o utilizador
+    //Constantes que degfinem as mensagens para o utilizador
     public static final String CONTACT_EXISTS = "contactBook.Contact already exists.";
+    public static final String PHONE_DOES_NOT_EXIST = "contactBook.Phone does not exist.";
     public static final String NAME_NOT_EXIST = "contactBook.Contact does not exist.";
     public static final String CONTACT_ADDED = "contactBook.Contact added.";
     public static final String CONTACT_REMOVED = "contactBook.Contact removed.";
