@@ -63,7 +63,7 @@ public class Main {
                     listAllContacts(cBook);
                     break;
                 case EQUAL_PHONE:
-                    hasSamePhone(cBook, cBook);
+                    hasSamePhone(cBook);
                     break;
                 default:
                 System.out.println(COMMAND_ERROR);
@@ -169,27 +169,21 @@ public class Main {
         else System.out.println(BOOK_EMPTY);
     }
 
-    private static void hasSamePhone(ContactBook cBook, ContactBook cBook2) {
+    private static void hasSamePhone(ContactBook cBook) {
+        ContactBook ref = new ContactBook();
         boolean found = false;
+
         cBook.initializeIterator();
-        Contact c1;
-        Contact c2;
-        cBook.next();
 
-        while (cBook.hasNext() && !found){
-            c1 = cBook.next();
-            cBook2.initializeIterator();
-
-            while (cBook2.hasNext() && !found){
-                c2 = cBook2.next();
-
-                if ((c1.getPhone() == c2.getPhone()) && !(c1.getName().equals(c2.getName()))) {
-                    System.out.println(REPEATED_PHONE);
-                    found = true;
-                }
-            }
+        while(cBook.hasNext() && !found) {
+            Contact c = cBook.next();
+            if(!ref.hasPhone(c.getPhone()))
+                ref.addContact(c.getName(), c.getPhone(), c.getEmail());
+            else found = true;
         }
-
-        if  (!found) System.out.println(NO_REPEATED_PHONE);
+        if(!found)
+            System.out.println(NO_REPEATED_PHONE);
+        else
+            System.out.println(REPEATED_PHONE);
     }
 }
