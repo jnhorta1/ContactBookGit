@@ -174,6 +174,7 @@ public class Main {
         cBook.initializeIterator();
         Contact c1;
         Contact c2;
+        cBook.next();
 
         while (cBook.hasNext() && !found){
             c1 = cBook.next();
@@ -187,7 +188,6 @@ public class Main {
                     found = true;
                 }
             }
-
         }
 
         if  (!found) System.out.println(NO_REPEATED_PHONE);
